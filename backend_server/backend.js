@@ -27,11 +27,11 @@ characterArray.push(new character("Sheep", "🐑", "Chicken"));
 characterArray.push(new character("Chicken", "🐔", "Duck"));
 characterArray.push(new character("Duck", "🦆", null));
 
-app.get('/', (req, res) => {
-    res.send('Asynchronous Animal Server');
+app.get('/' , (req, res) => {
+    res.send('✅ Async Animal Server is up and running');
 });
 
-app.get('/animals', (req, res) => {
+app.get('/api/animals', (req, res) => {
     let animals = [];
     for (let i = 0; i < characterArray.length; i++) {
         animals.push(characterArray[i].name);
@@ -39,7 +39,7 @@ app.get('/animals', (req, res) => {
     res.send(animals);
 });
 
-app.get('/animals/:name', (req, res) => {
+app.get('/api/animals/:name', (req, res) => {
     let name = req.params.name;
     let animal = characterArray.find((animal) => {
         return animal.name.toLowerCase() === name.toLowerCase();

@@ -1,11 +1,13 @@
 
 let characterNamesArray = [];
 let characterArray = [];
+const server_url = "http://localhost:3000";
 const ulElement = document.querySelector('.animals');
 let animalTable = document.querySelector("tbody");
 
+
 //Call the backend server to get the list of animals
-fetch('http://localhost:3000/animals')
+fetch(`${server_url}/api/animals`)
     .then(response => response.json())  //convert the response to json
     .then(animals => {
         //create a character name for each animal to show on the page
@@ -19,7 +21,7 @@ fetch('http://localhost:3000/animals')
     }).then(() => {
         //fetch the data for each animal
         for (let i = 0; i < characterNamesArray.length; i++) {
-            fetch(`http://localhost:3000/animals/${characterNamesArray[i]}`)
+            fetch(`${server_url}/api/animals/${characterNamesArray[i]}`)
                 .then(response => response.json())  //convert the response to json
                 .then(animal => {
                     console.log(animal.name);

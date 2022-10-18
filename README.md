@@ -3,7 +3,9 @@
 
 Fix the broken async calls so animals load in the right order and so the page does not take more than 3 seconds to load. 
 
-DO NOT MODIFY THE BACKEND. 
+DO NOT MODIFY backend.js
+
+You can lanch frontend using live server for auto refreshes without having to restart node server. 
 
 
 
